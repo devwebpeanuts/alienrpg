@@ -31,8 +31,7 @@
 .grid-4col {
   grid-column: span 4 / span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-color: var(--aliengreen);
-  border-style: double;
+  border: 2px solid $primary;
   padding: 4px;
 }
 
@@ -52,69 +51,84 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.grid-item {
+  padding: 5px;
+  h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-left: 0;
+  }
+}
 .Item1 {
   grid-area: Item1;
-  border: 1px solid var(--aliengreen);
-  padding: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
   text-align: center;
 }
 .Item2 {
   grid-area: Item2;
-  border: 1px solid var(--aliengreen);
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-right: 2px solid $primary;
 }
 .Item3 {
   grid-area: Item3;
-  border: 1px solid var(--aliengreen);
-  padding-left: 5px;
-  padding-right: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-right: 2px solid $primary;
 }
 .Item4 {
   grid-area: Item4;
-  border: 1px solid var(--aliengreen);
-  padding-left: 5px;
-  padding-right: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-right: 2px solid $primary;
 }
 .Item5 {
   grid-area: Item5;
-  border: 1px solid var(--aliengreen);
-  padding-left: 5px;
-  padding-right: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-right: 2px solid $primary;
 }
 .Item6 {
   grid-area: Item6;
-  border: 1px solid var(--aliengreen);
-  // justify-items: center;
-  padding-left: 5px;
-  padding-right: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-right: 2px solid $primary;
 }
 .Item7 {
   grid-area: Item7;
-  border: 1px solid var(--aliengreen);
-  padding-left: 5px;
-  padding-right: 5px;
+  border-top: 2px solid $primary;
+  border-right: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-bottom: 2px solid $primary;
 }
 .Item8 {
   grid-area: Item8;
-  border: 1px solid var(--aliengreen);
-  padding: 5px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
 }
 .Item9 {
   grid-area: Item9;
-  border: 1px solid var(--aliengreen);
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-bottom: 2px solid $primary;
 }
 .Item10 {
   grid-area: Item10;
-  border: 1px solid var(--aliengreen);
-  padding-left: 5px;
-  padding-right: 5px;
+  border: 2px solid $primary;
 }
 .Item11 {
   grid-area: Item11;
-  border: 1px solid var(--aliengreen);
-  padding: 4px;
-  padding-left: 24px;
+  border-top: 2px solid $primary;
+  border-left: 2px solid $primary;
+  border-bottom: 2px solid $primary;
   align-content: center;
   justify-content: center;
+
+  .maxboxsize {
+    margin-left: 19px !important;
+  }
 }
 .grid-2col-border {
   display: grid;
@@ -146,35 +160,25 @@
 }
 .Col1 {
   grid-area: Col1;
-  // justify-items: left;
-  // border: 2px solid white;
   align-self: center;
 }
 .Col2 {
   grid-area: Col2;
-  // justify-items: right;
-  // border: 2px solid white;
 }
 
 .Col3 {
   grid-area: Col3;
-  // justify-items: right;
-  // border: 2px solid white;
 }
 .Col4 {
   grid-area: Col4;
-  // justify-items: right;
-  // border: 2px solid white;
 }
 
 .grid-attr {
   display: grid;
-  // gap: 5px;
-  margin: 0;
   padding: 0;
+  margin-top: 5px;
   padding-left: 5px;
   align-items: center;
-  border: 1px solid var(--aliengreen);
   grid-template-areas: 'Attr1 Attr2 Attr3';
   grid-template-columns: 300px 35px 30px;
 }
@@ -266,7 +270,8 @@
 
 .grid-vehicle {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  padding: 4px;
+  border: 2px solid $primary;
   grid-template-areas:
     'vItem1 vItem2 vItem3 vItem4'
     'vItem5 vItem6 vItem7 vItem8';
@@ -304,7 +309,8 @@
 
 .grid-weapon {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  padding: 4px;
+  border: 2px solid $primary;
   grid-template-areas:
     'wItem1 wItem2 wItem3 wItem4'
     'wItem5 wItem6 wItem7 wItem7';
@@ -466,11 +472,12 @@
     'talTitle talTitle'
     'tal1 tal2'
     'tal3 tal4';
-  // grid-template-rows: 3fr;
-
   padding: 3px;
   grid-template-columns: 75% 25%;
   align-items: center;
+}
+.item.grid-talents {
+  margin: 10px;
 }
 
 .tal1 {
@@ -499,7 +506,7 @@
 }
 .talTitle {
   grid-area: talTitle;
-  background-color: #221f1f;
+  color: $background;
 }
 
 .grid-two {
@@ -576,7 +583,8 @@
 
 .grid-creature {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid $primary;
+  padding: 4px;
   grid-template-areas:
     // 'vChar1 vChar1  '
 

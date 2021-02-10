@@ -372,14 +372,14 @@ export class alienrpgSynthActorSheet extends ActorSheet {
       if (temp2 != null || temp2.length) {
         chatData = item.data.data.description;
       }
-      if (temp3.startsWith('<ol>') && chatData.startsWith('<h2>No Stunts Entered</h2>')) {
+      if (temp3.startsWith('<ol>') && chatData.startsWith('<h3>No Stunts Entered</h3>')) {
         chatData = temp3;
       }
     } catch {
       if (temp3.startsWith('<ol>')) {
         chatData = temp3;
       } else {
-        chatData = '<h2>No Stunts Entered</h2>';
+        chatData = '<h3>No Stunts Entered</h3>';
       }
     }
 

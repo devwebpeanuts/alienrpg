@@ -1,0 +1,12 @@
+#players {
+    bottom: 10px;
+    border: 2px solid $primary;
+
+    h3 {
+        border-bottom: 6px double $primary;
+
+        .players-mode {
+            color: unset;
+        }
+    }
+}

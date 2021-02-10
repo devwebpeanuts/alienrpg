@@ -1,0 +1,19 @@
+#controls {
+    .scene-control, .control-tool {
+        &, &.toggle {
+            background: $background;
+            color: $primary;
+            border: 2px solid $primary;
+            box-shadow: 0 0 2px lighten($primary, 5%);
+            border-radius: 0;
+
+            &.active, &:hover {
+                color: $background;
+                background: $primary;
+                border: 2px solid $primary;
+                border-bottom: 2px solid $primary-light;
+                box-shadow: 0 0 2px lighten($primary, 5%);
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.compendium {
+    .directory-list {
+        .directory-item {
+            border-bottom: unset;
+        }
+    }
+}
+
+.roll-table-config {
+    ol{
+        &.table-results {
+            .table-header {
+                border: 2px solid $primary;
+                background: $primary;
+                color: $background;
+            }
+            .table-result {
+                .result-image {
+                    img {
+                        filter: invert(1);
+                    }
+                }
+                .result-range {
+                    flex: 0 0 98px;
+                }
+                .result-controls {
+                    .lock-result {
+                        color: $primary;
+                    }
+                }
+                &.drawn {
+                    .result-controls {
+                        .lock-result {
+                            color: $primary-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

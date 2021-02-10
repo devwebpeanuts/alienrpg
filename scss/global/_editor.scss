@@ -1,0 +1,39 @@
+.tox, .tox.tox-tinymce {
+    .tox-editor-container {
+        background: $secondary;
+    }
+    .tox .tox-toolbar-overlord {
+        background: $primary;
+        color: $background;
+    }
+    .tox-edit-area {
+        padding: 0 8px;
+    }
+    .tox-toolbar, .tox-toolbar__overflow, .tox-toolbar__primary {
+        background: $primary;
+    }
+    .tox-tbtn {
+        cursor: pointer;
+        color: $background;
+        border-radius: 0;
+        margin: 0;
+        svg {
+            fill: $background;
+        }
+        &:hover {
+            background: $primary;
+            color: $secondary;
+            svg {
+                fill: $secondary;
+            }
+        }
+    }
+    .tox-tbtn--enabled, .tox-tbtn--enabled:hover {
+        border-bottom: 2px solid $primary-light;
+        background: $background-light;
+        color: $secondary;
+        svg {
+            fill: $secondary;
+        }
+    }
+}

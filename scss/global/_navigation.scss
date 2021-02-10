@@ -1,0 +1,42 @@
+#navigation {
+    #nav-toggle {
+        border: 2px solid $primary;
+        border-radius: 0;
+        background: $background;
+        color: $primary;
+    }
+    #scene-list {
+        .scene {
+            border: 2px solid $primary;
+            background: $background;
+            color: $primary;
+            &.active {
+                color: $secondary;
+                border: 2px solid $primary;
+                background: $primary;
+                box-shadow: unset;
+            }
+            &.view, &.context {
+                color: $primary;
+                border: 2px solid $primary;
+                background: $background;
+                box-shadow: unset;
+            }
+            &.view {
+                border-bottom: 2px solid $primary-light;
+                &.active {
+                    color: $secondary;
+                    border: 2px solid $primary;
+                    background: $primary;
+                    border-bottom: 2px solid $primary-light;
+                }
+            }
+            &.gm {
+                border: 2px dashed $primary;
+                &.view {
+                    border-bottom: 2px solid $primary-light;
+                }
+            }
+        }
+    }
+}

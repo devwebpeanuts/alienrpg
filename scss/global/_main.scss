@@ -1,0 +1,478 @@
+body {
+    background-image: unset;
+    background-color: $background;
+    font-family: 'OCR A Std';
+    font-size: 11px;
+}
+
+.app {
+    border-radius: 0;
+    background: $background;
+    color: $primary;
+    box-shadow: 0 0 2px lighten($primary, 5%);
+    &.sidebar-popout {
+        border: 2px solid $primary;
+        .window-content {
+            margin-top: 5px;
+            color: $primary;
+        }
+    }
+}
+
+a[href] {
+    color: $primary-light;
+}
+a:hover {
+    text-shadow: 0 0 2px darken($primary, 10%);
+    color: $secondary;
+}
+
+.tabs {
+    .item {
+        border-bottom: 2px solid $primary;
+        &.active {
+            text-shadow: unset;
+            border-bottom: 2px solid $primary-light;
+            color: $background;
+            background: $primary;
+        }
+    }
+}
+
+select {
+    border: 2px solid $background-light;
+    border-radius: 0;
+    background: $background-light;
+    color: $secondary;
+    font-family: 'OCR A Std';
+    font-size: 12px;
+
+    &:focus {
+        box-shadow: unset;
+    }
+
+    option:hover {
+        background-color: $primary;
+        color: $secondary;
+    }
+}
+
+textarea {
+    border: 2px solid $background-light;
+    border-radius: 0;
+    background: $background-light;
+    color: $secondary;
+    font-family: 'OCR A Std';
+    font-size: 12px;
+    &:focus {
+        box-shadow: unset;
+        outline: unset;
+        border-bottom: 2px solid $primary-light;
+    }
+}
+
+h1, h2 {
+    border-bottom: unset;
+}
+
+button {
+    margin: 0;
+    color: $primary;
+    background: $background;
+    border: 2px solid $primary;
+    border-radius: 0;
+    cursor: pointer;
+    &:hover {
+        background: $primary;
+        color: $background;
+        border-bottom: 2px solid $primary-light;
+    }
+}
+
+.whisper, .emote, .ic {
+    button {
+        color: $primary;
+        background: $background;
+        border: 2px solid $background;
+        border-radius: 0;
+        &:hover {
+            color: $secondary;
+            border-bottom: 2px solid $primary-light;
+        }
+    }
+}
+
+.dice-total {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+}
+.dice-formula, .dice-total {
+    margin: 5px 0;
+}
+
+.window-app {
+    border: 2px solid $primary;
+    .window-header {
+        border-bottom: unset;
+        color: $background;
+        background: $primary;
+    }
+    .window-content {
+        margin-top: 5px;
+        background: $background;
+        color: $primary;
+    }
+    .dialog-buttons {
+        .dialog-button {
+
+            &, &.default {
+                border: 2px solid $primary;
+                background: $background;
+                color: $primary;
+                &:hover {
+                    color: $background;
+                    background: $primary;
+                    border-bottom: 2px solid $primary-light;
+                }
+            }
+        }
+    }
+}
+.window-title {
+    font-weight: bold;
+}
+.header-button {
+    font-weight: bold;
+}
+#context-menu {
+    border: 2px solid $primary;
+    border-radius: 0;
+    background: $primary;
+    color: $background;
+     li {
+         &.context-item:hover {
+             color: $secondary;
+             text-shadow: unset;
+         }
+     }
+}
+
+li {
+    &.folder  {
+        &.collapsed {
+            .folder-header {
+                border-left: 2px solid transparent;
+                background: $primary;
+                color: $background;
+                h3 {
+                    text-shadow: unset;
+                }
+            }
+        }
+        & > .folder-header {
+            border-left: 2px solid $primary-light;
+            background: lighten($primary, 10%);
+            color: $secondary;
+            .create-folder, .create-entity {
+                color: unset;
+            }
+        }
+    }
+}
+
+.subdirectory {
+    border-left: 8px solid transparent;
+    border-bottom: 2px solid transparent;
+    .folder {
+        border-left: unset;
+    }
+}
+
+form {
+    .form-group, .form-group-stacked {
+        border: 2px solid $primary;
+        padding: 10px;
+        margin: 10px 0;
+        span {
+            &.units {
+                color: $hint;
+            }
+        }
+
+        button {
+            margin: 0 5px;
+        }
+    }
+    .form-header {
+        background: $secondary;
+        color: $background;
+        border-top: 1px solid $secondary;
+        border-bottom: 1px solid $secondary;
+        padding-left: 5px;
+    }
+    .notes, .hint {
+        color: $hint;
+    }
+    button {
+        border: 2px solid $primary;
+    }
+}
+.scene-sheet {
+    .form-header {
+        border-top: 2px solid $primary;
+        border-bottom: 2px solid $primary;
+        background: $primary;
+        color: $background;
+        line-height: 25px;
+        h3 {
+            border-top: unset;
+            border-bottom: unset;
+        }
+    }
+}
+.sheet-footer, footer {
+    margin-top: 10px;
+    &:not(.filepicker-footer)
+    {
+        button {
+            margin: 0 5px;
+        }
+    }
+}
+#client-settings {
+    nav {
+       &.tabs {
+           font-size: 14px;
+       }
+    }
+    section {
+        &.content {
+            border-top: unset;
+            margin-top: 10px;
+        }
+    }
+}
+#settings {
+    h2 {
+        border-top: 2px solid $primary;
+        border-bottom: 2px solid $primary;
+        background: $primary;
+        color: $background;
+        line-height: 25px;
+    }
+}
+#compendium {
+    h3 {
+        border-top: 2px solid $primary;
+        border-bottom: 2px solid $primary;
+        background: $primary;
+        color: $background;
+        line-height: 25px;
+    }
+    li {
+        &.compendium-pack {
+            border-bottom: 2px solid $primary;
+            .status-icons {
+                color: $primary;
+            }
+        }
+    }
+}
+nav {
+    &.list-filters {
+        a {
+            &.filter {
+                border-bottom: 2px solid $primary;
+                &.active {
+                    border-bottom: 2px solid $primary-light;
+                }
+            }
+        }
+    }
+}
+#module-management {
+    .package-list {
+        margin: 10px 0;
+        border-top: unset;
+        .package {
+            padding: 10px;
+            border-bottom: unset;
+            &:nth-of-type(odd) {
+                background: lighten($background, 2%);
+            }
+        }
+        .package-title, .package-metadata, .package-description {
+            color: $primary;
+        }
+    }
+}
+.filepicker {
+    .current-dir {
+        button {
+            background: $background;
+            border: 2px solid $primary;
+            border-radius: 0;
+            line-height: unset;
+            &:hover {
+                background: $primary;
+                color: $background;
+                border-bottom: 2px solid $primary-light;
+            }
+        }
+    }
+    .display-modes {
+        a {
+            border: 2px solid $primary;
+            background: $background;
+            border-radius: 0;
+            &.active {
+                text-shadow: unset;
+                border: 2px solid $primary;
+                border-bottom: 2px solid $primary-light;
+                background: $primary;
+                color: $background;
+            }
+        }
+    }
+    .directory {
+        border-radius: 0;
+        border: 2px solid $primary;
+        background: $background-light;
+        & > li {
+            border-bottom: unset;
+        }
+        li {
+            border: 1px solid transparent;
+            &:hover {
+                color: $secondary;
+                text-shadow: unset;
+            }
+            &.picked {
+                background: rgba(0, 0, 0, 0.2);
+                border: 2px solid $primary-light;
+            }
+        }
+    }
+    .images-list {
+        li {
+            padding-bottom: 10px;
+            border: unset;
+            border-top: 2px solid $background;
+            span {
+                &.filename {
+                    border-radius: 0;
+                    background: $background;
+                    color: $secondary;
+                    border: unset;
+                }
+            }
+        }
+    }
+    .tiles-list {
+        li {
+            &.picked {
+                box-shadow: unset;
+            }
+        }
+    }
+    .private {
+        .directory {
+            background: $background;
+        }
+        button {
+            &.privacy {
+                background: $primary;
+                color: $secondary;
+                border-bottom: 2px solid $primary-light;
+                box-shadow: unset;
+            }
+        }
+    }
+    .public {
+        .private {
+            &.dir {
+                background: $background;
+            }
+        }
+    }
+}
+#playlists {
+    li {
+        &.playlist {
+            .sound-control {
+                font-size: 12px;
+                color: $primary;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+select, input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+    font-family: 'OCR A Std';
+    border-radius: 0;
+    border: 2px solid $background-light;
+    background: $background-light;
+    color: $secondary;
+    &:focus {
+        box-shadow: unset;
+        border-bottom: 2px solid $primary-light;
+    }
+    &::placeholder {
+        color: $secondary;
+        opacity: 50%;
+    }
+}
+input[type="color"][data-edit] {
+    border: 2px solid $primary;
+}
+
+button {
+    font-family: 'OCR A Std';
+    font-size: 12px;
+    font-weight: bold;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: $secondary;
+    border: 1px solid $secondary;
+}
+
+input[type=range] {
+    & + .range-value {
+        border: 2px solid $primary;
+        color: $secondary;
+    }
+}
+input[type=range]::-webkit-slider-runnable-track,
+input[type=range]::-moz-range-track,
+input[type=range]::-ms-track
+{
+    &:focus {
+        background-color: $secondary;
+    }
+    background-color: $secondary;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background: $primary;
+}
+input[type=range]::-moz-range-thumb {
+    background: $primary;
+}
+input[type=range]::-ms-thumb {
+    background: $primary;
+}
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    filter: hue-rotate(238deg);
+}
+hr {
+    margin: 10px 0;
+    border: none;
+    border: 1px solid $primary;
+}
+img {
+    border: unset;
+}

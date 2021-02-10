@@ -102,7 +102,7 @@ export class yze {
     // *******************************************************
     // Handle Base Dice Roll
     // *******************************************************
-    chatMessage += '<h2 style="color:  #fff">' + rType + ' ' + label + ' </h2>';
+    chatMessage += '<h3>' + rType + ' ' + label + ' </h3>';
     if (r1Dice >= 1) {
       roll1 = `${r1Dice}` + 'db';
       if (r2Dice <= 0) {
@@ -143,10 +143,10 @@ export class yze {
       // *******************************************************
       if (actortype != 'supply') {
         if (game.alienrpg.rollArr.r2One >= 1) {
-          chatMessage += '<div class="blink"; style="color: red; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.rollStress') + '</div>';
-        }
+          chatMessage += '<div class="alert"><span>' + game.i18n.localize('ALIENRPG.rollStress') + '</span></div>';
+        } 
       } else if (game.alienrpg.rollArr.r2One >= 1) {
-        chatMessage += '<div class="blink"; style="color: blue; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.supplyDecreases') + '</div>';
+        chatMessage += '<div class="alert"><span class="blink"><i class="fa fa-exclamation-triangle"></i></span><span class="blink">' + game.i18n.localize('ALIENRPG.supplyDecreases') + '</span><span class="blink"><i class="fa fa-exclamation-triangle"></i></span></div>';
       }
     }
     // *******************************************************
@@ -159,27 +159,27 @@ export class yze {
     }
 
     if (actortype != 'supply') {
+      let numberOfSuccess = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six + game.alienrpg.rollArr.sCount
+      let icon = 'fa-times'
+      if(numberOfSuccess >= 1) {
+        icon = 'fa-check'
+      }
       chatMessage +=
-        '<div style="color: #6868fc; font-weight: bold; font-size: larger">' +
-        game.i18n.localize('ALIENRPG.youHave') +
-        ' ' +
-        localizedCountOfSuccesses(game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six + game.alienrpg.rollArr.sCount) +
-        ' </div>';
+        `<div class="success-message"><i class="fa ${icon}"></i>${game.i18n.localize('ALIENRPG.youHave')} ${localizedCountOfSuccesses(numberOfSuccess)}</div>`;
     }
 
     // *******************************************************
     //  If it's a Push roll and display the total for both rolls.
     // *******************************************************
     if (reRoll && actortype === 'character') {
+      let numberOfSuccess = oldRoll + game.alienrpg.rollArr.multiPush + game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+      let icon = 'fa-times'
+      if(numberOfSuccess >= 1) {
+        icon = 'fa-check'
+      }
       chatMessage +=
-        '<hr>' +
-        '<div style="color: #6868fc; font-weight: bold; font-size: larger">' +
-        game.i18n.localize('ALIENRPG.followingPush') +
-        '<br>' +
-        game.i18n.localize('ALIENRPG.totalOf') +
-        ' ' +
-        localizedCountOfSuccesses(oldRoll + game.alienrpg.rollArr.multiPush + game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six) +
-        ' </div>';
+        `<hr><div class="success-message"><i class="fa ${icon}"></i>${game.i18n.localize('ALIENRPG.followingPush')} ${game.i18n.localize('ALIENRPG.totalOf')} ${localizedCountOfSuccesses(numberOfSuccess)}</div>`;
+
       game.alienrpg.rollArr.multiPush = oldRoll;
       console.log('spud');
     }
@@ -192,7 +192,7 @@ export class yze {
       if (reRoll != 'mPush') {
         chatMessage += `<span>` + game.i18n.localize('ALIENRPG.MultiPush') + ` ` + `</span> <input class="multiPush" name="multiPush" type="checkbox" {{checked false}} /> `;
       }
-      chatMessage += `<button class="alien-Push-button" title="PUSH Roll?"></button>`;
+      chatMessage += `<button class="push" title="Push roll ?">PUSH</button>`;
       chatMessage += `<span class="dmgBtn-container" style="position:absolute; right:0; bottom:1px;"></span>`;
       chatMessage += `<span class="dmgBtn-container" style="position:absolute; top:0; right:0; bottom:1px;"></span>`;
     }
@@ -256,11 +256,6 @@ export class yze {
         game.alienrpg.rollArr.r1One = R1.length;
         let numOf6s = R6.length; // added by Steph
         let numOf1s = R1.length; // added by Steph
-        chatMessage += '<div style="color: #03cf03">' + col1 + '  ' + r1Dice + ' Dice</div>';
-        chatMessage += '<span style="color: #03cf03">  Sixes: </span>';
-        chatMessage += `${R6.length}`;
-        chatMessage += '<div>';
-        // added by Steph (for loop, and moved div close)
         for (var _d = 0; _d < numDie; _d++) {
           if (numOf6s > 0) {
             chatMessage += "<span class='alien-diceface-b6'></span>";
@@ -283,12 +278,6 @@ export class yze {
           game.alienrpg.rollArr.r1One = RB1.length;
           let numOfB6s = RB6.length; // added by Steph
           let numOfB1s = RB1.length; // added by Steph
-          // Base Dice
-          chatMessage += '<div style="color: #03cf03">' + col1 + '  ' + r1Dice + ' Dice</div>';
-          chatMessage += '<span style="color: #03cf03">  Sixes: </span>';
-          chatMessage += `${RB6.length}`;
-          chatMessage += '<div>';
-          // added by Steph (for loop, and moved div close)
           for (var _d = 0; _d < mr.terms[0].number; _d++) {
             if (numOfB6s > 0) {
               chatMessage += "<span class='alien-diceface-b6'></span>";
@@ -325,14 +314,6 @@ export class yze {
         let numOfY6s = RY6.length; // added by Steph
         let numOfY1s = RY1.length; // added by Steph
 
-        // Yellow Dice
-        chatMessage += '<div style="color: goldenrod; font-weight: bold">' + col2 + '  ' + r2Dice + ' Dice</div>';
-        chatMessage += '<span style="color: red">Ones: </span>';
-        chatMessage += `<span>${RY1.length}</span>`;
-        chatMessage += '<span style="color: #03cf03">  Sixes: </span>';
-        chatMessage += `${RY6.length}`;
-        chatMessage += '<div>';
-        // added by Steph (for loops, and moved div close)
         for (var _d = 0; _d < numOfY6s; _d++) {
           chatMessage += "<span class='alien-diceface-y6'></span>";
         }

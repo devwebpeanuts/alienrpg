@@ -1,10 +1,9 @@
+.resources {
+  border: 2px solid $primary;
+}
 .resource-label {
-  // font-weight: bold;
-  font-family: var(--alienfont);
   text-transform: uppercase;
-  // padding-right: 5px;
   padding-left: 5px;
-  //  color: $c-green;
   justify-self: center;
   flex: auto;
 }
@@ -13,6 +12,4 @@
   font-weight: bold;
   text-transform: uppercase;
   padding-right: 5px;
-  //  color: $c-green;
-  // justify-self: center;
 }

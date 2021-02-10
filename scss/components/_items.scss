@@ -9,8 +9,22 @@
   // overflow-y: auto;
 }
 .item-header {
-  // font-weight: bold;
-  background-color: rgb(44, 40, 40);
+  background-color: $primary;
+}
+
+.inventory {
+  .item-header {
+    background-color: $primary;
+    color: $background;
+    margin-bottom: 10px;
+    padding: 5px 0;
+  }
+  h2 {
+    background: $background;
+    color: $primary;
+    margin: 0;
+    padding: 10px 0;
+  }
 }
 
 .item-name {
@@ -49,7 +63,7 @@
     // width: 550px;
     word-wrap: break-word;
     //  color: $c-green;
-    font-family: var(--alienfont);
+    font-family: 'OCR A Std';
   }
 
   img {

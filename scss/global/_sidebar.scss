@@ -1,0 +1,340 @@
+#sidebar {
+    border: 2px solid $primary;
+    width: 302px;
+
+    #sidebar-tabs {
+        box-shadow: 0 0 2px lighten($primary, 10%);
+        font-size: 16px;
+        margin: 0;
+        border: unset;
+        .collapse {
+            color: $secondary;
+            line-height: 33px;
+            flex: 0 0 28px;
+            border-bottom: 2px solid $primary;
+        }
+
+        & > .item {
+            border-radius: 0;
+            border: unset;
+            border-bottom: 2px solid $primary;
+            &.active {
+                border-radius: 0;
+                color: $background;
+                background: $primary;
+                border-bottom: 2px solid $primary-light;
+                box-shadow: unset;
+            }
+        }
+    }
+
+    &.collapsed {
+        #sidebar-tabs {
+            border-bottom: unset;
+            .collapse {
+                border-bottom: unset;
+            }
+
+            & > .item {
+                border-bottom: unset;
+                border-radius: 0;
+                &.active {
+                    border-radius: 0;
+                    border: unset;
+                    border-bottom: 2px solid $primary-light;
+                    color: $background;
+                    background: $primary;
+                    box-shadow: unset;
+                }
+            }
+        }
+    }
+    #chat-controls {
+        .control-buttons {
+            flex: 0 0 50px;
+        }
+        .roll-type-select {
+            color: $background;
+            background: $primary;
+        }
+    }
+
+    #chat-form {
+        margin: 0 2px 2px;
+        textarea {
+            background: $background-light;
+            color: $secondary;
+            border: 2px solid $primary;
+        }
+    }
+
+    #chat-log {
+        margin: 10px 0;
+        .message {
+            border: 2px solid $primary !important;
+            border-radius: 0;
+        }
+        .chat-message {
+            padding: 10px;
+            font-size: 12px;
+            color: $primary;
+            background: $background;
+            .message-header {
+                .message-metadata {
+                    flex: 3;
+                }
+                color: $secondary;
+                margin-bottom: 5px;
+            }
+            &.whisper, &.emote, &.ic {
+                background: $primary;
+                color: $background;
+            }
+            .message-content {
+                line-height: 23px;
+                .chatBG {
+                    h3 {
+                        color: $secondary;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .success-message {
+                margin: 10px 0 0 0;
+                color: $primary-light;
+                font-size: 14px;
+                font-weight: bold;
+                display: flex;
+                align-content: baseline;
+                i {
+                    height: 25px;
+                    line-height: 26px;
+                    background: $primary-light;
+                    color: $background;
+                    text-align: center;
+                    margin-right: 5px;
+                    display: block;
+                    flex: 0 0 25px;
+                }
+            }
+            .push-success-message {
+                margin: 10px 0 0 0;
+                padding: 5px;
+                background: $primary-light;
+                color: $background;
+                font-size: 14px;
+                font-weight: bold;
+                i {
+                    width: 25px;
+                    height: 25px;
+                    line-height: 26px;
+                    background: $background;
+                    color: $primary-light;
+                    text-align: center;
+                    margin-right: 5px;
+                }
+            }
+            .alert, .panic {
+                margin-top: 5px;
+                font-weight: bold;
+                min-height: 30px;
+                line-height: 33px;
+                padding-left: 5px;
+                display: flex;
+                text-align: center;
+                span {
+                    flex: 1 1 auto;
+                    &.blink {
+                        animation: blinker 1s linear infinite;
+                    }
+                }
+                background: $alert;
+                box-shadow: 0 0 8px $alert-light inset;
+                border: 1px solid $alert-light;
+                color: $secondary;
+                i {
+                    margin: 0 10px;
+                }
+            }
+            .panic-description {
+                margin: 5px 0;
+            }
+            .more-panic {
+                color: $secondary;
+                font-weight: bold;
+            }
+        }
+        .push {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .dice-roll {
+            margin-top: 5px;
+            .dice-formula, .dice-total {
+                background: $secondary;
+                color: $background;
+                border-radius: 0;
+                border: 2px solid $secondary;
+            }
+        }
+        .dice-tooltip {
+            border: 2px solid $primary-light;
+            margin-bottom: 5px;
+            .part-header {
+                background: $primary-light;
+                color: $background;
+                .part-total {
+                    border: unset;
+                    background: unset;
+                }
+            }
+            .dice-rolls {
+                .roll {
+                    margin-left: 5px;
+                    font-size: 15px;
+                    line-height: 33px;
+                    width: 30px;
+                    background-size: 30px 30px;
+                    color: $background;
+                    &.d4 {
+                        background-image: url(../icons/d4-alien.svg);
+                    }
+                    &.d6 {
+                        background-image: url(../icons/d6-alien.svg);
+                    }
+                    &.d8 {
+                        background-image: url(../icons/d8-alien.svg);
+                    }
+                    &.d10 {
+                        background-image: url(../icons/d10-alien.svg);
+                    }
+                    &.d12 {
+                        background-image: url(../icons/d12-alien.svg);
+                    }
+                    &.d20 {
+                        background-image: url(../icons/d20-alien.svg);
+                    }
+                }
+            }
+        }
+        a.inline-roll {
+            border: unset;
+            border-radius: 0;
+            background: $primary;
+            color: $background;
+            padding: 4px 4px;
+            i {
+                color: $background;
+            }
+            .dice-tooltip {
+                border-radius: 0;
+                padding: 0;
+                background: $background;
+            }
+        }
+    }
+    #scenes {
+        .scene {
+            border: unset;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            &.context, &.active {
+                border-color: $primary-light;
+                box-shadow: unset;
+            }
+            h3 {
+                color: $secondary;
+            }
+        }
+    }
+
+    #combat {
+        #combat-tracker {
+            padding: 0;
+        }
+        #combat-controls {
+            border-top: 2px solid $primary;
+        }
+        #combat-round {
+            margin-top: 10px;
+            border-bottom: 6px double $primary;
+            .encounters {
+                a {
+                    color: $primary-light;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+                h3 {
+                    font-size: 16px;
+                }
+                h4 {
+                    color: $secondary;
+                    font-size: 15px;
+                }
+            }
+        }
+        li {
+            &.combatant {
+                .token-name {
+                    font-size: 14px;
+                    .combatant-control {
+                        color: $primary-light;
+                    }
+                }
+                .token-resource {
+                    border-right: unset;
+                }
+                &:hover {
+                    background: inherit;
+                }
+                &.active {
+                    background: $primary;
+                    .token-name {
+                        color: $background;
+                    }
+                    .token-initiative {
+                        .initiative {
+                            color: $background;
+                        }
+                    }
+                }
+                .roll:hover {
+                    background-image: url('../icons/d20-alien.svg');
+                }
+            }
+        }
+    }
+}
+.sidebar-tab {
+    .action-buttons {
+        button {
+            height: unset;
+        }
+    }
+    .directory-header {
+        margin-top: 10px;
+        .header-search {
+            input {
+                background: $background-light;
+                color: $secondary;
+                border-color: $background-light;
+                &:focus {
+                    border-bottom: 2px solid $primary-light;
+                }
+            }
+        }
+    }
+    .directory-list {
+        .entity {
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+        }
+        .directory-item {
+            &.context, &.active {
+                border-color: $primary-light;
+            }
+        }
+    }
+}

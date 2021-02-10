@@ -1,0 +1,42 @@
+#hotbar {
+    height: 56px;
+    #action-bar {
+        height: 56px;
+    }
+    width: 618px;
+    .bar-controls {
+        color: $primary;
+        background: $background;
+        border: 2px solid $primary;
+        box-shadow: 0 0 2px lighten($primary, 5%);
+        span {
+            &.page-number {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    #macro-list {
+        border-radius: 0;
+        border: 1px solid $primary;
+        box-shadow: 0 0 2px lighten($primary, 5%);
+        flex: 0 0 542px;
+    }
+    .macro {
+        border: 4px double $primary;
+        border-radius: 0;
+        height: 54px;
+        flex: 0 0 54px;
+        &:hover {
+            border: 4px double $primary;
+            box-shadow: 0 0 10px $primary-light inset;
+        }
+        &.active:hover {
+            border: 4px double $primary;
+        }
+        .macro-key {
+            color: $secondary;
+        }
+    }
+}

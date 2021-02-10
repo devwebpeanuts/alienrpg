@@ -9,24 +9,26 @@
   position: absolute;
   left: -500%;
   top: 50%;
-  background: #000000;
-  border: 1px solid var(--aliengreen);
-  border-radius: 5px;
-  color: var(--aliengreen);
   text-align: left;
   font-size: smaller;
   z-index: 1;
+  border: 2px solid $primary;
+  border-radius: 0;
+  background: $primary;
+  color: $background;
+  li {
+    &.context-item:hover {
+      color: $secondary;
+    }
+  }
 }
 
 .alienrpg .window-content {
-  font-family: var(--alienfont);
-  color: var(--aliengreen);
-  font-size: var(--fontsize);
   background: $c-black;
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 2px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: auto;
   border: var(--aliengreen) 3px;
 }
@@ -159,12 +161,10 @@
 
 .inline-roll .dice-tooltip {
   color: inherit;
-  //  color: $c-green;
   background: $c-black;
   border: 2px solid var(--aliengreen);
   border-radius: 2px;
 }
-// a.entity-link,
 a.inline-roll {
   background: black;
   padding: 1px 4px;
@@ -174,43 +174,27 @@ a.inline-roll {
   word-break: break-all;
 }
 
-.dice-roll .dice-formula,
-.dice-roll .dice-total {
-  // color: inherit;
-  color: var(--aliengreen);
-}
-.dice-tooltip .part-header .part-formula {
-  //  color: $c-green;
-  color: inherit;
-}
-.part-total {
-  //  color: $c-green;
-  color: inherit;
-}
-
 .alienrpg h2 {
   border: 0;
   padding: 0;
   margin: 1px;
   margin-left: 5px;
-  // font-size: var(--fontsize) ;
+  font-weight: bold;
 }
 .alienrpg h3 {
   border: 0;
   padding: 0;
   margin: 1px;
-  // font-size: var(--fontsize) ;
-
-  // margin-left: 2px;
 }
 
 .alienrpg h4 {
   border: 0;
   padding: 0;
-  margin: 1px;
-  // font-size: var(--fontsize) ;
 }
 .resource-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   button {
     flex: 0;
     border: 0;
@@ -219,23 +203,24 @@ a.inline-roll {
     padding: 0;
     color: inherit;
     margin: 0;
+    &:hover {
+      border: 0;
+      background: unset;
+      color: $secondary;
+    }
   }
 }
 
 .rollable {
   &:hover,
   &:focus {
-    // color: black;
-    text-shadow: 0 0 20px red;
-    font-size: 95%;
     cursor: pointer;
+    color: $secondary;
   }
 }
 .creature-acid-roll {
   &:hover,
   &:focus {
-    // color: black;
-    text-shadow: 0 0 20px red;
     font-size: 110%;
     cursor: pointer;
   }
@@ -243,30 +228,15 @@ a.inline-roll {
 .rollItem {
   &:hover,
   &:focus {
-    // color: black;
-    text-shadow: 0 0 20px red;
     font-size: 110%;
     font-weight: bolder;
     cursor: pointer;
   }
 }
-.openItem {
+.openItem, .talent-btn {
   &:hover,
   &:focus {
-    // color: black;
-    text-shadow: 0 0 20px red;
-    font-size: 110%;
-    font-weight: bolder;
-    cursor: pointer;
-  }
-}
-.talent-btn {
-  &:hover,
-  &:focus {
-    color: rgb(40, 143, 0);
-    text-shadow: 0 0 20px red;
-    // font-size: 110%;
-    font-weight: bolder;
+    color: $secondary;
     cursor: pointer;
   }
 }
@@ -277,16 +247,10 @@ a.inline-roll {
   line-height: 20px;
   padding: 0;
 }
-.supply-btn {
-  font-size: 5px;
-  padding: 0;
-  font-family: var(--alienfont);
-}
 
-.stunt-btn {
+.supply-btn, .stunt-btn {
   width: 5px;
   padding: 0;
-  font-family: var(--alienfont);
 }
 
 .creature-attack-roll {
@@ -295,20 +259,6 @@ a.inline-roll {
   height: 42px;
   padding-top: 5px;
   margin: 1px;
-  border: none;
-  background: url(../images/AlienRPG-Roll-Attack-Push-Button.png) no-repeat top left;
-}
-.creature-attack-roll:hover {
-  border-radius: 10px;
-  background-color: #942a22;
-  color: rgb(255, 0, 0);
-}
-.creature-attack-roll:active {
-  position: relative;
-  top: 1px;
-  border-radius: unset;
-  background-color: unset;
-  color: unset;
 }
 button:hover,
 button:focus {
@@ -355,42 +305,29 @@ button:focus {
   margin: 1px;
   background: url(../ui/alien-dice-y6.png) no-repeat top left;
 }
-.alien-Push-button {
-  display: inline-block;
-  width: 260px;
-  height: 42px;
-  padding-top: 5px;
-  margin: 1px;
-  border: none;
-  background: url(../images/AlienRPG-Push-Button.png) no-repeat top left;
-}
-.alien-Push-button:hover {
-  border-radius: 10px;
-  background-color: #942a22;
-  color: rgb(255, 0, 0);
-}
 
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted $primary;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 250px;
-  background-color: black;
-  //  color: $c-green;
+  background-color: $background-light;
+  color: $primary;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 0;
   padding: 5px 0;
   position: absolute;
   z-index: 1;
   top: -5px;
   right: 105%;
   margin-left: -60px;
-  border-style: solid;
-  border-color: var(--aliengreen);
+  border: 2px solid $primary;
+  font-family: 'OCR A Std';
+  font-size: 0.95em;
 }
 .tooltip .tooltiptext::after {
   content: ' ';
@@ -399,8 +336,6 @@ button:focus {
   left: 100%; /* To the right of the tooltip */
   margin-top: -5px;
   border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent $c-green;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -927,4 +862,24 @@ button:focus {
   margin-right: auto;
   background-size: 100%;
   border: 0;
+}
+.sheet {
+  nav{
+    &.sheet-tabs{
+      border-top: unset;
+      border-bottom: unset;
+    }
+  }
+}
+
+.editor-edit {
+  background: $background;
+  color: $primary;
+  border-radius: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 2em;
+  &:hover {
+    color: $secondary;
+  }
 }

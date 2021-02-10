@@ -254,7 +254,9 @@ Hooks.once('ready', async () => {
   r.style.setProperty('--aliengreen', game.settings.get('alienrpg', 'fontColour'));
   r.style.setProperty('--alienfont', game.settings.get('alienrpg', 'fontStyle'));
 
-  //   // Wait to register the Hotbar drop hook on ready sothat modulescould register earlier if theywant to
+  const scanline = $('<div>').addClass('scanline');
+  $('body').append(scanline)
+
   Hooks.on('hotbarDrop', (bar, data, slot) => createAlienrpgMacro(data, slot));
 });
 
@@ -347,14 +349,14 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 Hooks.on('renderChatMessage', (message, html, data) => {
   // console.warn('init hook here');
 
-  html.find('button.alien-Push-button').each((i, li) => {
+  html.find('button.push').each((i, li) => {
     // console.warn(li);
     li.addEventListener('click', function (ev) {
       // console.log('🚀 ~ file: alienrpg.js ~ line 332 ~ ev', ev);
       let tarG = ev.target.previousElementSibling.checked;
       console.log('multi', tarG);
 
-      if (ev.target.classList.contains('alien-Push-button')) {
+      if (ev.target.classList.contains('push')) {
         // do stuff
         let actor = game.actors.get(message.data.speaker.actor);
         if (!actor) return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoToken'));

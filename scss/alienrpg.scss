@@ -5,11 +5,20 @@
 @import 'utils/variables';
 
 /* Global styles */
+@import 'global/effect';
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
 @import 'global/itemList';
 @import 'global/select-css';
+@import 'global/main';
+@import 'global/navigation';
+@import 'global/controls';
+@import 'global/players';
+@import 'global/sidebar';
+@import 'global/hotbar';
+@import 'global/compendium';
+@import 'global/editor';
 
 /* Styles limited to alienrpg sheets */
 .alienrpg {

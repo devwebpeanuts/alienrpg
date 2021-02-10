@@ -446,7 +446,6 @@ export class alienrpgActor extends Actor {
         let modRoll = '1d6' + '+' + parseInt(aStress);
      //   console.warn('rolling stress', modRoll);
         const roll = new Roll(modRoll);
-
         const customResults = table.roll({ roll });
         let oldPanic = actor.data.data.general.panic.lastRoll;
 
@@ -454,7 +453,7 @@ export class alienrpgActor extends Actor {
           alienrpgActor.causePanic(actor);
         }
 
-        chatMessage += '<h2 style=" color: #f71403; font-weight: bold;" >' + game.i18n.localize('ALIENRPG.PanicCondition') + addSign(rollModifier).toString() + '</h2>';
+        chatMessage += '<div class="panic"><span>' + game.i18n.localize('ALIENRPG.PanicCondition') + '</span></div>';
         chatMessage += `<h4><i>${table.data.description}</i></h4>`;
         let mPanic = customResults.roll.total < actor.data.data.general.panic.lastRoll;
 
@@ -463,40 +462,30 @@ export class alienrpgActor extends Actor {
           actor.update({ 'data.general.panic.lastRoll': pCheck });
 
           chatMessage +=
-            '<h4 style="font-weight: bolder"><i><b>' +
-            game.i18n.localize('ALIENRPG.Roll') +
-            ' ' +
-            `${customResults.roll.total}` +
-            ' ' +
-            '<span style="color: #f71403;font-weight: bolder"><i><b>' +
-            game.i18n.localize('ALIENRPG.MorePanic') +
-            '</span></b></i></span></h4>';
-
-          chatMessage +=
-            '<h4><i>' +
-            game.i18n.localize('ALIENRPG.PCPanicLevel') +
-            '<b style="color: #f71403;">' +
-            game.i18n.localize('ALIENRPG.Level') +
-            ' ' +
-            `${pCheck}` +
-            ' ' +
-            game.i18n.localize('ALIENRPG.Seepage104') +
-            '</b></i></h4>';
-
-          chatMessage += this.morePanic(pCheck);
+              `<div class="dice-roll">
+                    <div class="dice-result"><div class="dice-formula">${modRoll}</div><div class="dice-total">${customResults.roll.total}</div></div>
+                </div>
+                <h3 class="panic-description more-panic">${game.i18n.localize('ALIENRPG.MorePanic')}!</h3>
+                <div class="panic-description more-panic"><i>${game.i18n.localize('ALIENRPG.PCPanicLevel')} ${game.i18n.localize('ALIENRPG.Seepage104')}</i></div>
+                <div class="panic-description">${this.morePanic(pCheck)}</div>
+                <div class="panic"><span class="blink"><i class="fa fa-exclamation-triangle"></i></span><span class="blink">${game.i18n.localize('ALIENRPG.YouAreAtPanic')} ${game.i18n.localize('ALIENRPG.Level')} ${pCheck}</span><span class="blink"><i class="fa fa-exclamation-triangle"></i></span></div>`
         } else {
           if (actor.data.type === 'character') actor.update({ 'data.general.panic.lastRoll': customResults.roll.total });
           pCheck = customResults.roll.total;
-          chatMessage += '<h4><i><b>' + game.i18n.localize('ALIENRPG.Roll') + ' ' + `${pCheck}` + ' </b></i></h4>';
+          chatMessage += `<div class="dice-roll">
+            <div class="dice-result"><div class="dice-formula">${modRoll}</div><div class="dice-total">${pCheck}</div></div>
+          </div>`
           // chatMessage += game.i18n.localize(`ALIENRPG.${customResults.results[0].text}`);
-          chatMessage += this.morePanic(pCheck);
+          chatMessage += `<div class="panic-description">${this.morePanic(pCheck)}</div>`;
           if (customResults.roll.total >= 7) {
-            chatMessage += `<h4 style="color: #f71403;"><i><b>` + game.i18n.localize('ALIENRPG.YouAreAtPanic') + ` <b>` + game.i18n.localize('ALIENRPG.Level') + ` ${pCheck}</b></i></h4>`;
+            chatMessage += `<div class="panic"><span class="blink"><i class="fa fa-exclamation-triangle"></i></span><span class="blink">${game.i18n.localize('ALIENRPG.YouAreAtPanic')} ${game.i18n.localize('ALIENRPG.Level')} ${pCheck}</span><span class="blink"><i class="fa fa-exclamation-triangle"></i></span></div>`;
           }
         }
         let trauma = customResults.roll.total >= 13 || pCheck >= 13;
         if (trauma) {
-          chatMessage += `<h4><b>` + game.i18n.localize('ALIENRPG.PermanantTrauma') + `<i>(` + game.i18n.localize('ALIENRPG.Seepage106') + `) </i></h4></b>`;
+          chatMessage +=
+            `<h3 class="panic-description more-panic">${game.i18n.localize('ALIENRPG.PermanantTrauma')}!</h3>
+            <div class="panic-description more-panic"><i>${game.i18n.localize('ALIENRPG.TraumaRoll')} ${game.i18n.localize('ALIENRPG.Seepage106')}</i></div>`;
         }
 
         let rollMode = game.settings.get('core', 'rollMode');
@@ -603,9 +592,7 @@ export class alienrpgActor extends Actor {
   
     } else if (dataset.panicroll) {
       // Roll against the panic table and push the roll to the chat log.
-  
          myRenderTemplate('systems/alienrpg/templates/dialog/roll-stress-dialog.html');
- 
     }
   }
 
@@ -765,7 +752,7 @@ export class alienrpgActor extends Actor {
     } else {
       // Roll against the panic table and push the roll to the chat log.
       let chatMessage = '';
-      chatMessage += '<h2>' + game.i18n.localize('ALIENRPG.AcidAttack') + '</h2>';
+      chatMessage += '<h3>' + game.i18n.localize('ALIENRPG.AcidAttack') + '</h3>';
       chatMessage += `<h4><i>` + game.i18n.localize('ALIENRPG.AcidBlood') + `</i></h4>`;
       ChatMessage.create({
         user: game.user._id,
@@ -786,7 +773,7 @@ export class alienrpgActor extends Actor {
     const roll = new Roll('1d6');
 
     const customResults = table.roll({ roll });
-    chatMessage += '<h2>' + game.i18n.localize('ALIENRPG.AttackRoll') + '</h2>';
+    chatMessage += '<h3>' + game.i18n.localize('ALIENRPG.AttackRoll') + '</h3>';
     chatMessage += `<h4><i>${table.data.description}</i></h4>`;
     chatMessage += `${customResults.results[0].text}`;
     ChatMessage.create({

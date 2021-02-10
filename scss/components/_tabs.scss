@@ -3,16 +3,16 @@
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   color: inherit;
-  background-color: $c-black;
 
   .item {
     line-height: 30px;
     font-weight: bold;
+    font-size: 14px;
     color: inherit;
   }
 
   .item.active {
-    text-decoration: underline;
     text-shadow: none;
+    color: $background;
   }
 }

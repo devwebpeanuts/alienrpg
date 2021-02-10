@@ -182,7 +182,8 @@
   "ALIENRPG.Encumbrance": "Encumbrance",
   "ALIENRPG.YouAreAtPanic": "You are at Panic",
   "ALIENRPG.Level": "Level",
-  "ALIENRPG.PermanantTrauma": "Permanent Trauma. Make an EMPATHY roll at the end of the session. ",
+  "ALIENRPG.PermanantTrauma": "Permanent Trauma",
+  "ALIENRPG.TraumaRoll": "Make an EMPATHY roll at the end of the session.",
   "ALIENRPG.Seepage106": "See page 106 of the Alien rule book.",
   "ALIENRPG.NoSkill": "No Skill",
   "ALIENRPG.CreatureSkill": "This Creature does not have this Skill.",
@@ -227,7 +228,7 @@
   "ALIENRPG.MorePanic": "More Panic",
   "ALIENRPG.SynthDontNeed": "Synthetics don’t need air, food, water, or sleep. They are immune to vacuum, cold, and disease. Androids are typically unaffected by alien pathogens.",
   "ALIENRPG.Seepage104": "See page 104 of the Alien rule book.",
-  "ALIENRPG.PCPanicLevel": "PC's Panic level has increased by one step to ",
+  "ALIENRPG.PCPanicLevel": "PC's Panic level has increased by one step.",
   "ALIENRPG.YourPanicLevel": "Your Panic level has increased by one step to ",
   "ALIENRPG.ComputerMainframes": "Computer Mainframes",
   "ALIENRPG.keyResources": "Key Resources",
@@ -244,5 +245,6 @@
   "ALIENRPG.CombatantReroll": "ReRoll Initiative",
   "ALIENRPG.CombatantRemove": "Remove Actor",
   "ALIENRPG.MultiPush": "Allow multi-push",
-  "ALIENRPG.SynthStress": "Imitate Human Panic and Push Button"
+  "ALIENRPG.SynthStress": "Imitate Human Panic and Push Button",
+  "ALIENRPG.RollAttack": "Roll attack"
 }
