@@ -1,8 +1,8 @@
 {
-  "name": "alienrpg",
-  "title": "Alien RPG",
-  "description": "The Alien RPG system for Foundry VTT!",
-  "version": "1.3.1",
+  "name": "alienrpg-improved-ui",
+  "title": "Alien RPG (Improved UI)",
+  "description": "The Alien RPG system with improved UI for Foundry VTT!",
+  "version": "0.1",
   "minimumCoreVersion": "0.7.3",
   "compatibleCoreVersion": "0.7.9",
   "author": "Paul Watson",
@@ -81,8 +81,8 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "stress",
   "initiative": "1d10",
-  "url": "https://github.com/pwatson100/alienrpg",
-  "manifest": "https://github.com/pwatson100/alienrpg/releases/download/1.3.1/system.json",
-  "download": "https://github.com/pwatson100/alienrpg/releases/download/1.3.1/master.zip",
+  "url": "https://github.com/devwebpeanuts/alienrpg",
+  "manifest": "https://github.com/devwebpeanuts/alienrpg/releases/download/0.1/system.json",
+  "download": "https://github.com/devwebpeanuts/alienrpg/releases/download/0.1/improved-ui.zip",
   "socket": true
 }

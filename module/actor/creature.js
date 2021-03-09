@@ -20,8 +20,8 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'creature-sheet'],
-      // template: 'systems/alienrpg/templates/actor/creature-sheet.html',
+      classes: ['alienrpg-improved-ui', 'sheet', 'actor', 'creature-sheet'],
+      // template: 'systems/alienrpg-improved-ui/templates/actor/creature-sheet.html',
       width: 660,
       height: 650,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -29,7 +29,7 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/alienrpg-improved-ui/templates/actor/';
     return `${path}creature-sheet.html`;
   }
 
@@ -91,7 +91,7 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('alienrpg-improved-ui', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));

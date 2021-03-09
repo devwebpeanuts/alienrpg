@@ -34,7 +34,7 @@ export class alienrpgItem extends Item {
     game.alienrpg.rollArr.sCount = 0;
     game.alienrpg.rollArr.multiPush = 0;
 
-    let template = 'systems/alienrpg/templates/dialog/roll-all-dialog.html';
+    let template = 'systems/alienrpg-improved-ui/templates/dialog/roll-all-dialog.html';
     // let roll;
     let r2Data = 0;
     let reRoll = false;
@@ -103,7 +103,7 @@ export class alienrpgItem extends Item {
         });
       } else {
         // Its not got stress so don't display the stress mod box
-        template = 'systems/alienrpg/templates/dialog/roll-base-dialog.html';
+        template = 'systems/alienrpg-improved-ui/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
             title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),

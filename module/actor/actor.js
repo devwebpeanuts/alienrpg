@@ -10,7 +10,7 @@ export class alienrpgActor extends Actor {
   /** @override */
   getRollData() {
     const data = super.getRollData();
-    const shorthand = game.settings.get('alienrpg', 'macroShorthand');
+    const shorthand = game.settings.get('alienrpg-improved-ui', 'macroShorthand');
 
     // Re-map all attributes onto the base roll data
     if (!!shorthand) {
@@ -342,7 +342,7 @@ export class alienrpgActor extends Actor {
   _prepareTeritoryData(data) {}
 
   _prepareTokenImg() {
-    if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
+    if (game.settings.get('alienrpg-improved-ui', 'defaultTokenSettings')) {
       if (this.data.token.img == 'icons/svg/mystery-man.svg' && this.data.token.img != this.img) {
         this.data.token.img = this.img;
       }
@@ -581,18 +581,18 @@ export class alienrpgActor extends Actor {
    
      
         if (actor.data.type === 'character' && (dataset.spbutt != 'armor')){
-            myRenderTemplate('systems/alienrpg/templates/dialog/roll-all-dialog.html');
+            myRenderTemplate('systems/alienrpg-improved-ui/templates/dialog/roll-all-dialog.html');
         }
         else if (actor.data.type === 'synthetic') {
-            myRenderTemplate('systems/alienrpg/templates/dialog/roll-base-dialog.html');
+            myRenderTemplate('systems/alienrpg-improved-ui/templates/dialog/roll-base-dialog.html');
         } else
         {
-            myRenderTemplate('systems/alienrpg/templates/dialog/roll-base-dialog.html');
+            myRenderTemplate('systems/alienrpg-improved-ui/templates/dialog/roll-base-dialog.html');
         }
   
     } else if (dataset.panicroll) {
       // Roll against the panic table and push the roll to the chat log.
-         myRenderTemplate('systems/alienrpg/templates/dialog/roll-stress-dialog.html');
+         myRenderTemplate('systems/alienrpg-improved-ui/templates/dialog/roll-stress-dialog.html');
     }
   }
 
@@ -701,7 +701,7 @@ export class alienrpgActor extends Actor {
   }
 
   async creatureAcidRoll(actor, dataset) {
-    let template = 'systems/alienrpg/templates/dialog/roll-base-xeno-dialog.html';
+    let template = 'systems/alienrpg-improved-ui/templates/dialog/roll-base-xeno-dialog.html';
     let label = dataset.label;
     let r1Data = parseInt(dataset.roll || 0);
     let r2Data = 0;

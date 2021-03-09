@@ -9,7 +9,7 @@ export class AlienConfig extends FormApplication {
       title: game.i18n.localize('ALIENRPG.MenuLabel'),
       id: 'alienprgSettings',
       icon: 'fas fa-cogs',
-      template: 'systems/alienrpg/module/alienprgSettings.html',
+      template: 'systems/alienrpg-improved-ui/module/alienprgSettings.html',
       width: 400,
       closeOnSubmit: true,
     });
@@ -18,8 +18,8 @@ export class AlienConfig extends FormApplication {
   getData(options) {
     return mergeObject(
       {
-        fontStyle: game.settings.get('alienrpg', 'fontStyle'),
-        fontColour: game.settings.get('alienrpg', 'fontColour'),
+        fontStyle: game.settings.get('alienrpg-improved-ui', 'fontStyle'),
+        fontColour: game.settings.get('alienrpg-improved-ui', 'fontColour'),
       }
       // this.reset ? AlienConfig.ARPG_OPTIONS() : AlienConfig.ARPG_OPTIONS()
     );
@@ -31,7 +31,7 @@ export class AlienConfig extends FormApplication {
     // html.find('select').change(this.onApply.bind(this));
     html.find('button[name="reset"]').click(this.onReset.bind(this));
 
-    document.getElementById('fontStyle').value = game.settings.get('alienrpg', 'fontStyle');
+    document.getElementById('fontStyle').value = game.settings.get('alienrpg-improved-ui', 'fontStyle');
     // this.reset = false;
   }
 
@@ -45,15 +45,15 @@ export class AlienConfig extends FormApplication {
 
   onReset() {
     // this.reset = true;
-    game.settings.set('alienrpg', 'fontStyle', 'Wallpoet');
-    game.settings.set('alienrpg', 'fontColour', '#adff2f');
+    game.settings.set('alienrpg-improved-ui', 'fontStyle', 'Wallpoet');
+    game.settings.set('alienrpg-improved-ui', 'fontColour', '#adff2f');
     this.render();
   }
 
   async _updateObject(event, formData) {
     // console.log('_updateObject -> formData', formData);
-    await game.settings.set('alienrpg', 'fontColour', formData.fontColour);
-    await game.settings.set('alienrpg', 'fontStyle', formData.fontStyle);
+    await game.settings.set('alienrpg-improved-ui', 'fontColour', formData.fontColour);
+    await game.settings.set('alienrpg-improved-ui', 'fontStyle', formData.fontStyle);
     ui.notifications.info(game.i18n.localize('ALIENRPG.Consumables'));
   }
   close() {
@@ -75,7 +75,7 @@ export class AlienConfig extends FormApplication {
      </button>`)
         .insertAfter('button[data-action="configure"]')
         .on('click', (event) => {
-          const menu = game.settings.menus.get('alienrpg.alienrpgSettings');
+          const menu = game.settings.menus.get('alienrpg-improved-ui.alienrpgSettings');
           if (!menu) return ui.notifications.error('No submenu found for the provided key');
           const app = new menu.type();
           return app.render(true);

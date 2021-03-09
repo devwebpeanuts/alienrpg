@@ -72,7 +72,7 @@ export const migrateWorld = async function () {
   // }
 
   // Set the migration as complete
-  game.settings.set('alienrpg', 'systemMigrationVersion', game.system.data.version);
+  game.settings.set('alienrpg-improved-ui', 'systemMigrationVersion', game.system.data.version);
   ui.notifications.info(`AlienRPG System Migration to version ${game.system.data.version} completed!`, { permanent: true });
 };
 

@@ -6,7 +6,7 @@ export class alienrpgPlanetSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'item', 'planet-system'],
+      classes: ['alienrpg-improved-ui', 'sheet', 'item', 'planet-system'],
       width: 710,
       height: 665,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'details' }],
@@ -15,7 +15,7 @@ export class alienrpgPlanetSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = 'systems/alienrpg/templates/item';
+    const path = 'systems/alienrpg-improved-ui/templates/item';
     // Return a single sheet for all item types.
     return `${path}/planet-system-sheet.html`;
     // Alternatively, you could use the following return statement to do a

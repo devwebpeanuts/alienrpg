@@ -22,8 +22,8 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'vehicles-sheet'],
-      // template: 'systems/alienrpg/templates/actor/vehicles-sheet.html',
+      classes: ['alienrpg-improved-ui', 'sheet', 'actor', 'vehicles-sheet'],
+      // template: 'systems/alienrpg-improved-ui/templates/actor/vehicles-sheet.html',
       width: 745,
       height: 510,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -31,7 +31,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/alienrpg-improved-ui/templates/actor/';
     return `${path}vehicles-sheet.html`;
   }
 
@@ -164,7 +164,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
     // Add Inventory Item
     new ContextMenu(html, '.item-edit', itemContextMenu);
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('alienrpg-improved-ui', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));

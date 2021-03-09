@@ -113,8 +113,8 @@ Hooks.once('init', async function () {
 
   // Register sheet application classes
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('alienrpg', alienrpgItemSheet, { types: ['item', 'weapon', 'armor', 'talent', 'skill-stunts', 'agenda'], makeDefault: false });
-  Items.registerSheet('alienrpg', alienrpgPlanetSheet, { types: ['planet-system'], makeDefault: false });
+  Items.registerSheet('alienrpg-improved-ui', alienrpgItemSheet, { types: ['item', 'weapon', 'armor', 'talent', 'skill-stunts', 'agenda'], makeDefault: false });
+  Items.registerSheet('alienrpg-improved-ui', alienrpgPlanetSheet, { types: ['planet-system'], makeDefault: false });
   registerSettings();
   registerActors();
 
@@ -161,7 +161,7 @@ Hooks.once('init', async function () {
   });
 
   // Register system settings
-  game.settings.register('alienrpg', 'macroShorthand', {
+  game.settings.register('alienrpg-improved-ui', 'macroShorthand', {
     name: 'ALIENRPG.DefMacro',
     hint: 'ALIENRPG.DefMacroHint',
     scope: 'world',
@@ -170,7 +170,7 @@ Hooks.once('init', async function () {
     config: true,
   });
 
-  game.settings.register('alienrpg', 'fontColour', {
+  game.settings.register('alienrpg-improved-ui', 'fontColour', {
     name: 'ALIENRPG.Fontpick',
     label: 'ALIENRPG.Colpick',
     hint: 'ALIENRPG.ColpickHint',
@@ -184,7 +184,7 @@ Hooks.once('init', async function () {
       location.reload();
     },
   });
-  game.settings.register('alienrpg', 'fontStyle', {
+  game.settings.register('alienrpg-improved-ui', 'fontStyle', {
     name: 'ALIENRPG.FontStyle',
     label: 'ALIENRPG.StylePicker',
     hint: 'ALIENRPG.StylePickerHint',
@@ -197,7 +197,7 @@ Hooks.once('init', async function () {
       location.reload();
     },
   });
-  game.settings.registerMenu('alienrpg', 'alienrpgSettings', {
+  game.settings.registerMenu('alienrpg-improved-ui', 'alienrpgSettings', {
     name: 'ALIENRPG.MenuName',
     label: 'ALIENRPG.MenuLabel',
     hint: 'ALIENRPG.MenuHint',
@@ -207,7 +207,7 @@ Hooks.once('init', async function () {
   });
 
   // register setting for add/remove menu button
-  game.settings.register('alienrpg', 'addMenuButton', {
+  game.settings.register('alienrpg-improved-ui', 'addMenuButton', {
     name: 'ALIENRPG.AddMenuName',
     hint: 'ALIENRPG.AddMenuHint',
     scope: 'world',
@@ -225,7 +225,7 @@ Hooks.once('ready', async () => {
   await AlienRPGSetup.setup();
 
   // Determine whether a system migration is required and feasible
-  const currentVersion = game.settings.get('alienrpg', 'systemMigrationVersion');
+  const currentVersion = game.settings.get('alienrpg-improved-ui', 'systemMigrationVersion');
   const NEEDS_MIGRATION_VERSION = '1.2.12';
   const COMPATIBLE_MIGRATION_VERSION = '0' || isNaN('NaN');
   let needMigration = currentVersion < NEEDS_MIGRATION_VERSION || currentVersion === null;
@@ -251,8 +251,8 @@ Hooks.once('ready', async () => {
   }, 250);
 
   let r = document.querySelector(':root');
-  r.style.setProperty('--aliengreen', game.settings.get('alienrpg', 'fontColour'));
-  r.style.setProperty('--alienfont', game.settings.get('alienrpg', 'fontStyle'));
+  r.style.setProperty('--aliengreen', game.settings.get('alienrpg-improved-ui', 'fontColour'));
+  r.style.setProperty('--alienfont', game.settings.get('alienrpg-improved-ui', 'fontStyle'));
 
   const scanline = $('<div>').addClass('scanline');
   $('body').append(scanline)
@@ -262,7 +262,7 @@ Hooks.once('ready', async () => {
 
 // create/remove the quick access config button
 Hooks.once('renderSettings', () => {
-  AlienConfig.toggleConfigButton(JSON.parse(game.settings.get('alienrpg', 'addMenuButton')));
+  AlienConfig.toggleConfigButton(JSON.parse(game.settings.get('alienrpg-improved-ui', 'addMenuButton')));
 });
 
 // ***************************
@@ -281,44 +281,44 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     texture: 'none',
   });
 
-  dice3d.addSystem({ id: 'alienrpg', name: 'Alien RPG - Blank' }, 'exclusive');
+  dice3d.addSystem({ id: 'alienrpg-improved-ui', name: 'Alien RPG - Blank' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [
-      'systems/alienrpg/ui/DsN/alien-dice-b0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b6.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b6.png',
     ],
     colorset: 'black',
-    system: 'alienrpg',
+    system: 'alienrpg-improved-ui',
   });
   dice3d.addDicePreset({
     type: 'ds',
     labels: [
-      'systems/alienrpg/ui/DsN/alien-dice-y1.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y0.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y6.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y1.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y0.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y6.png',
     ],
     colorset: 'yellow',
-    system: 'alienrpg',
+    system: 'alienrpg-improved-ui',
   });
 
   dice3d.addSystem({ id: 'alienrpgf', name: 'Alien RPG - Full Dice' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [
-      'systems/alienrpg/ui/DsN/b1.png',
-      'systems/alienrpg/ui/DsN/b2.png',
-      'systems/alienrpg/ui/DsN/b3.png',
-      'systems/alienrpg/ui/DsN/b4.png',
-      'systems/alienrpg/ui/DsN/b5.png',
-      'systems/alienrpg/ui/DsN/alien-dice-b6.png',
+      'systems/alienrpg-improved-ui/ui/DsN/b1.png',
+      'systems/alienrpg-improved-ui/ui/DsN/b2.png',
+      'systems/alienrpg-improved-ui/ui/DsN/b3.png',
+      'systems/alienrpg-improved-ui/ui/DsN/b4.png',
+      'systems/alienrpg-improved-ui/ui/DsN/b5.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-b6.png',
     ],
     colorset: 'black',
     system: 'alienrpgf',
@@ -326,12 +326,12 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   dice3d.addDicePreset({
     type: 'ds',
     labels: [
-      'systems/alienrpg/ui/DsN/alien-dice-y1.png',
-      'systems/alienrpg/ui/DsN/y2.png',
-      'systems/alienrpg/ui/DsN/y3.png',
-      'systems/alienrpg/ui/DsN/y4.png',
-      'systems/alienrpg/ui/DsN/y5.png',
-      'systems/alienrpg/ui/DsN/alien-dice-y6.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y1.png',
+      'systems/alienrpg-improved-ui/ui/DsN/y2.png',
+      'systems/alienrpg-improved-ui/ui/DsN/y3.png',
+      'systems/alienrpg-improved-ui/ui/DsN/y4.png',
+      'systems/alienrpg-improved-ui/ui/DsN/y5.png',
+      'systems/alienrpg-improved-ui/ui/DsN/alien-dice-y6.png',
     ],
     colorset: 'yellow',
     system: 'alienrpgf',
@@ -389,7 +389,7 @@ Hooks.on('renderChatMessage', (message, html, data) => {
 // Setupthe prototype token
 // *************************************************
 Hooks.on('preCreateActor', (actor, dir) => {
-  if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
+  if (game.settings.get('alienrpg-improved-ui', 'defaultTokenSettings')) {
     // Set wounds, advantage, and display name visibility
     mergeObject(actor, {
       'token.displayName': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
@@ -504,7 +504,7 @@ async function createAlienrpgMacro(data, slot) {
       type: 'script',
       img: item.img,
       command: command,
-      flags: { 'alienrpg.itemMacro': true },
+      flags: { 'alienrpg-improved-ui.itemMacro': true },
     });
   }
   game.user.assignHotbarMacro(macro, slot);

@@ -7,29 +7,29 @@ import ActorSheetAlienRPGTerritory from './actor/territory.js';
 function registerActors() {
   Actors.unregisterSheet('core', ActorSheet); // Register Character Sheet
 
-  Actors.registerSheet('alienrpg', alienrpgActorSheet, {
+  Actors.registerSheet('alienrpg-improved-ui', alienrpgActorSheet, {
     types: ['character'],
     makeDefault: true,
   });
 
-  Actors.registerSheet('alienrpg', alienrpgSynthActorSheet, {
+  Actors.registerSheet('alienrpg-improved-ui', alienrpgSynthActorSheet, {
     types: ['synthetic'],
     makeDefault: true,
   });
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGVehicle, {
+  Actors.registerSheet('alienrpg-improved-ui', ActorSheetAlienRPGVehicle, {
     types: ['vehicles'],
     makeDefault: true,
   }); // Register vehicle Sheet
 
   // console.warn('Reg: Got here');
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGCreat, {
+  Actors.registerSheet('alienrpg-improved-ui', ActorSheetAlienRPGCreat, {
     types: ['creature'],
     makeDefault: true,
   }); // Register vehicle Sheet
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGTerritory, {
+  Actors.registerSheet('alienrpg-improved-ui', ActorSheetAlienRPGTerritory, {
     types: ['territory'],
     makeDefault: true,
   }); // Register Territory Sheet

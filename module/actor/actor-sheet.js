@@ -21,8 +21,8 @@ export class alienrpgActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'actor-sheet'],
-      // template: 'systems/alienrpg/templates/actor/actor-sheet.html',
+      classes: ['alienrpg-improved-ui', 'sheet', 'actor', 'actor-sheet'],
+      // template: 'systems/alienrpg-improved-ui/templates/actor/actor-sheet.html',
       width: 740,
       height: 752,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -30,7 +30,7 @@ export class alienrpgActorSheet extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/alienrpg-improved-ui/templates/actor/';
     return `${path}actor-sheet.html`;
   }
 
@@ -305,7 +305,7 @@ export class alienrpgActorSheet extends ActorSheet {
     //   li.slideUp(200, () => this.render(false));
     // });
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('alienrpg-improved-ui', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));

@@ -22,8 +22,8 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'territory'],
-      // template: 'systems/alienrpg/templates/actor/vehicles-sheet.html',
+      classes: ['alienrpg-improved-ui', 'sheet', 'actor', 'territory'],
+      // template: 'systems/alienrpg-improved-ui/templates/actor/vehicles-sheet.html',
       width: 650,
       height: 650,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -31,7 +31,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/alienrpg-improved-ui/templates/actor/';
     return `${path}territory-sheet.html`;
   }
 

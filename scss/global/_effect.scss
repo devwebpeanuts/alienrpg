@@ -70,7 +70,7 @@
     }
 }
 
-body.vtt.game.system-alienrpg::before {
+body.vtt.game.system-alienrpg-improved-ui::before {
     content: " ";
     display: block;
     position: absolute;
@@ -83,7 +83,7 @@ body.vtt.game.system-alienrpg::before {
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
 }
-body.vtt.game.system-alienrpg::after {
+body.vtt.game.system-alienrpg-improved-ui::after {
     content: " ";
     display: block;
     position: absolute;

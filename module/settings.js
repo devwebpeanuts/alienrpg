@@ -1,5 +1,5 @@
 export default function () {
-  game.settings.register('alienrpg', 'defaultTokenSettings', {
+  game.settings.register('alienrpg-improved-ui', 'defaultTokenSettings', {
     name: 'ALIENRPG.DefProto',
     hint: 'ALIENRPG.DefProtoHint',
     scope: 'world',
@@ -7,7 +7,7 @@ export default function () {
     default: true,
     type: Boolean,
   });
-  game.settings.register('alienrpg', 'systemMigrationVersion', {
+  game.settings.register('alienrpg-improved-ui', 'systemMigrationVersion', {
     name: 'System Migration Version',
     scope: 'world',
     config: false,
@@ -15,7 +15,7 @@ export default function () {
     default: 0,
   });
 
-  game.settings.register('alienrpg', 'switchMouseKeys', {
+  game.settings.register('alienrpg-improved-ui', 'switchMouseKeys', {
     name: 'ALIENRPG.SwitchKeys',
     hint: 'ALIENRPG.SwitchKeysHint',
     scope: 'client',

@@ -197,7 +197,7 @@
   }
 }
 
-body.vtt.game.system-alienrpg::before {
+body.vtt.game.system-alienrpg-improved-ui::before {
   content: " ";
   display: block;
   position: absolute;
@@ -213,7 +213,7 @@ body.vtt.game.system-alienrpg::before {
   pointer-events: none;
 }
 
-body.vtt.game.system-alienrpg::after {
+body.vtt.game.system-alienrpg-improved-ui::after {
   content: " ";
   display: block;
   position: absolute;
@@ -365,7 +365,7 @@ body.vtt.game.system-alienrpg::after {
 }
 
 .chat-message {
-  background-image: url("/systems/alienrpg/images/IndBackground3.png");
+  background-image: url("/systems/alienrpg-improved-ui/images/IndBackground3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -389,7 +389,7 @@ body.vtt.game.system-alienrpg::after {
 }
 
 .chat-message .table-draw .table-results .table-result .chatBG {
-  background-image: url("/systems/alienrpg/images/IndBackground3.png");
+  background-image: url("/systems/alienrpg-improved-ui/images/IndBackground3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3440,12 +3440,12 @@ img {
 }
 
 /* Styles limited to alienrpg sheets */
-.alienrpg .item-form {
+.alienrpg-improved-ui .item-form {
   font-family: var(--alienfont);
   background: #000;
 }
 
-.alienrpg .actor-header {
+.alienrpg-improved-ui .actor-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 180px;
   flex: 0 0 180px;
@@ -3465,7 +3465,7 @@ img {
   margin-bottom: 1px;
 }
 
-.alienrpg .vehicle-header {
+.alienrpg-improved-ui .vehicle-header {
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3473,7 +3473,7 @@ img {
   margin-bottom: 1px;
 }
 
-.alienrpg .profile-img {
+.alienrpg-improved-ui .profile-img {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -3481,7 +3481,7 @@ img {
   width: auto;
 }
 
-.alienrpg .profile-img-item {
+.alienrpg-improved-ui .profile-img-item {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -3490,37 +3490,37 @@ img {
   width: 150px;
 }
 
-.alienrpg .header-fields {
+.alienrpg-improved-ui .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.alienrpg h1.charname {
+.alienrpg-improved-ui h1.charname {
   height: 50px;
   padding: 0px;
   border-bottom: 0;
 }
 
-.alienrpg h1.charname input {
+.alienrpg-improved-ui h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.alienrpg .sheet-tabs {
+.alienrpg-improved-ui .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
 
-.alienrpg .alienrpg .sheet-body,
-.alienrpg .tab,
-.alienrpg .editor {
+.alienrpg-improved-ui .alienrpg .sheet-body,
+.alienrpg-improved-ui .tab,
+.alienrpg-improved-ui .editor {
   height: 100%;
 }
 
-.alienrpg .maxboxsize {
+.alienrpg-improved-ui .maxboxsize {
   max-width: 40px;
   background-color: #003517;
   height: 25px;
@@ -3529,17 +3529,17 @@ img {
   text-align: center;
 }
 
-.alienrpg .cashboxsize {
+.alienrpg-improved-ui .cashboxsize {
   max-width: 150px;
   justify-items: center;
   text-align: center;
 }
 
-.alienrpg .textbox {
+.alienrpg-improved-ui .textbox {
   justify-items: center;
 }
 
-.alienrpg .textbox1 {
+.alienrpg-improved-ui .textbox1 {
   justify-items: center;
   width: 230px;
   padding: 0;
@@ -3547,7 +3547,7 @@ img {
   margin-bottom: 1px;
 }
 
-.alienrpg .textbox2 {
+.alienrpg-improved-ui .textbox2 {
   justify-items: center;
   width: 400px;
   padding: 0;
@@ -3555,7 +3555,7 @@ img {
   margin-bottom: 1px;
 }
 
-.alienrpg .textbox3 {
+.alienrpg-improved-ui .textbox3 {
   color: inherit;
   background-color: #000;
   padding: 5px;
@@ -3563,16 +3563,16 @@ img {
   width: 180px;
 }
 
-.alienrpg textarea {
+.alienrpg-improved-ui textarea {
   resize: none;
 }
 
-.alienrpg .click-stat-level:hover {
+.alienrpg-improved-ui .click-stat-level:hover {
   color: #e6ffe5;
   cursor: pointer;
 }
 
-.alienrpg form .sheet-content .click-stat-level {
+.alienrpg-improved-ui form .sheet-content .click-stat-level {
   height: 18px;
   padding: 8px;
   background: black;
@@ -3597,7 +3597,7 @@ img {
   cursor: pointer;
 }
 
-.alienrpg .click-stat-level .fas {
+.alienrpg-improved-ui .click-stat-level .fas {
   padding: 2px 4px;
   border-radius: 2px;
   -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
@@ -3620,7 +3620,7 @@ img {
   cursor: pointer;
 }
 
-.alienrpg .dots {
+.alienrpg-improved-ui .dots {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3633,15 +3633,15 @@ img {
   font-size: 15px;
 }
 
-.alienrpg .profile-img {
+.alienrpg-improved-ui .profile-img {
   border: unset;
 }
 
-.alienrpg .resources {
+.alienrpg-improved-ui .resources {
   border: 2px solid #02893c;
 }
 
-.alienrpg .resource-label {
+.alienrpg-improved-ui .resource-label {
   text-transform: uppercase;
   padding-left: 5px;
   justify-self: center;
@@ -3650,32 +3650,32 @@ img {
   flex: auto;
 }
 
-.alienrpg .attr-label {
+.alienrpg-improved-ui .attr-label {
   font-weight: bold;
   text-transform: uppercase;
   padding-right: 5px;
 }
 
-.alienrpg .tabs {
+.alienrpg-improved-ui .tabs {
   height: 30px;
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   color: inherit;
 }
 
-.alienrpg .tabs .item {
+.alienrpg-improved-ui .tabs .item {
   line-height: 30px;
   font-weight: bold;
   font-size: 14px;
   color: inherit;
 }
 
-.alienrpg .tabs .item.active {
+.alienrpg-improved-ui .tabs .item.active {
   text-shadow: none;
   color: #001700;
 }
 
-.alienrpg .items-list {
+.alienrpg-improved-ui .items-list {
   list-style: none;
   padding-left: 5px;
   padding-right: 5px;
@@ -3683,33 +3683,33 @@ img {
   padding-bottom: 0px;
 }
 
-.alienrpg .item-header {
+.alienrpg-improved-ui .item-header {
   background-color: #02893c;
 }
 
-.alienrpg .inventory .item-header {
+.alienrpg-improved-ui .inventory .item-header {
   background-color: #02893c;
   color: #001700;
   margin-bottom: 10px;
   padding: 5px 0;
 }
 
-.alienrpg .inventory h2 {
+.alienrpg-improved-ui .inventory h2 {
   background: #001700;
   color: #02893c;
   margin: 0;
   padding: 10px 0;
 }
 
-.alienrpg .item-name {
+.alienrpg-improved-ui .item-name {
   margin: 0;
 }
 
-.alienrpg .item-controls {
+.alienrpg-improved-ui .item-controls {
   text-align: right;
 }
 
-.alienrpg .item-label {
+.alienrpg-improved-ui .item-label {
   font-family: var(--alienfont);
   font-size: small;
   text-transform: uppercase;
@@ -3717,25 +3717,25 @@ img {
   padding-left: 5px;
 }
 
-.alienrpg .biog {
+.alienrpg-improved-ui .biog {
   height: 300px;
   padding: 3px 0;
   width: 1fr;
   font-family: var(--alienfont);
 }
 
-.alienrpg .biog .biog-image {
+.alienrpg-improved-ui .biog .biog-image {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
   margin-right: 5px;
 }
 
-.alienrpg .biog .editor-content {
+.alienrpg-improved-ui .biog .editor-content {
   word-wrap: break-word;
   font-family: 'OCR A Std';
 }
 
-.alienrpg .biog img {
+.alienrpg-improved-ui .biog img {
   display: block;
 }
